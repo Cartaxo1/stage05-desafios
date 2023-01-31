@@ -18,11 +18,16 @@ const phrases = [
 ];
 
 tryBtn.addEventListener("click", handleTryClick);
+resetBtn.addEventListener("click", handleResetClick);
 
 function handleTryClick(event) {
   event.preventDefault();
   toggleScreen();
   randomPhrase();
+}
+
+function handleResetClick() {
+  toggleScreen();
 }
 
 function randomPhrase() {
