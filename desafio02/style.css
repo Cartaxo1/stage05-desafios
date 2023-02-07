@@ -6,7 +6,7 @@
 
 :root {
   font-size: 62.5%;
-  --bg-color: #e5e5e5;
+  --bg-color: #FFF;
   --base-color: 194;
   --primary-color: hsla(var(--base-color), 97%, 31%, 1);
   --secondary-color: #E1E1E6;
@@ -72,7 +72,11 @@ button {
   grid-area: D;
 }
 
-.blue svg path {
-    fill: hsla(var(--base-color), 97%, 31%, 1);
+.active {
+    fill: var(--primary-color);
+}
+
+.active-fill {
+    fill: white;
 }
 
