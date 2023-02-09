@@ -1,23 +1,37 @@
-const buttons = document.querySelectorAll(".button");
+const minutesDisplay = document.querySelector(".minutes");
+const secondsDisplay = document.querySelector(".seconds");
+const buttonPLay = document.querySelector(".play");
+const buttonStop = document.querySelector(".stop");
+const buttonAdd = document.querySelector(".add-5");
+const buttonSub = document.querySelector(".sub-5");
 
-for (const button of buttons) {
-  button.addEventListener("click", handleButtonClick);
+
+function updateTimerDisplay(minutes, seconds) {
+  minutesDisplay.textContent = String(minutes).padStart(2, "0");
+  secondsDisplay.textContent = String(seconds).padStart(2, "0");
 }
 
-function handleButtonClick(event) {
-  const bg = event.currentTarget.querySelector(".bg");
-  const design = event.currentTarget.querySelector(".design");
+buttonPLay.addEventListener("click", countdown);
 
-  const activeBgButton = document.querySelector(".button .bg.active");
-  if (activeBgButton) {
-    activeBgButton.classList.remove("active");
-  }
-  
-    const activeDesign = document.querySelector(".button .design.active-fill");
-  if (activeDesign) {
-    activeDesign.classList.remove("active-fill");
-  }
+function countdown() {
+  setTimeout(function () {
+    let seconds = Number(secondsDisplay.textContent);
+    let minutes = Number(minutesDisplay.textContent);
+    updateTimerDisplay(minutes, 0);
 
-  bg.classList.add("active");
-  design.classList.add("active-fill");
+    if (minutes <= 0) {
+      updateTimerDisplay(25, 0)
+      return;
+    }
+
+    if (seconds <= 0) {
+      seconds = 2;
+      --minutes;
+    }
+
+    updateTimerDisplay(minutes, String(seconds - 1));
+
+    countdown();
+  }, 1000);
 }
+
