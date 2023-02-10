@@ -21,3 +21,5 @@ function handleButtonClick(event) {
   bg.classList.add("active");
   design.classList.add("active-fill");
 }
+
+buttonForest = document.querySelector(".button.forest");
