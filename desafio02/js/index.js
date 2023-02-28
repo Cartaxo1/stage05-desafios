@@ -21,7 +21,7 @@ function countdown() {
 
     if (minutes === 0 && seconds === 0) {
       updateTimerDisplay(25, 0);
-      timeEnd()
+      timeEnd();
       return;
     }
 
@@ -91,35 +91,52 @@ const fireAudio = new Audio("./src/Lareira.wav");
 const bellSound = new Audio(
   "https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true"
 );
+let currentAudio = null;
 
 buttonForest.addEventListener("click", soundForest);
 
 function soundForest() {
+  if (currentAudio) {
+    currentAudio.pause();
+  }
   forestAudio.loop = true;
   forestAudio.play();
+  currentAudio = forestAudio;
 }
 
 buttonRain.addEventListener("click", soundRain);
 
 function soundRain() {
+  if (currentAudio) {
+    currentAudio.pause();
+  }
   rainAudio.loop = true;
   rainAudio.play();
+  currentAudio = rainAudio;
 }
 
 buttonCoffe.addEventListener("click", coffeSound);
 
 function coffeSound() {
+  if (currentAudio) {
+    currentAudio.pause();
+  }
   coffeAudio.loop = true;
   coffeAudio.play();
+  currentAudio = coffeAudio;
 }
 
 ButtonFire.addEventListener("click", soundFireplace);
 
 function soundFireplace() {
+  if (currentAudio) {
+    currentAudio.pause();
+  }
   fireAudio.loop = true;
   fireAudio.play();
+  currentAudio = fireAudio;
 }
 
 function timeEnd() {
-  bellSound.play()
+  bellSound.play();
 }
