@@ -140,3 +140,28 @@ function soundFireplace() {
 function timeEnd() {
   bellSound.play();
 }
+
+
+
+const darkModeBtn = document.querySelector("#darkMode");
+const lightModeBtn = document.querySelector("#lightMode");
+const body = document.querySelector("body")
+
+function buttonToggle() {
+  darkModeBtn.classList.toggle("hide");
+  lightModeBtn.classList.toggle("hide");
+}
+
+darkModeBtn.addEventListener("click", darkMode);
+
+function darkMode() {
+  buttonToggle()
+  body.classList.add("dark-mode")
+}
+
+lightModeBtn.addEventListener("click", lightMode);
+
+function lightMode() {
+  buttonToggle()
+  body.classList.remove("dark-mode")
+}

@@ -6,10 +6,10 @@
 
 :root {
   font-size: 62.5%;
-  --bg-color: #FFF;
+  --bg-color: #fff;
   --base-color: 194;
   --primary-color: hsla(var(--base-color), 97%, 31%, 1);
-  --secondary-color: #E1E1E6;
+  --secondary-color: #e1e1e6;
   --text-color: hsla(240, 6%, 21%, 1);
 }
 
@@ -73,14 +73,30 @@ button {
 }
 
 .active {
-    fill: var(--primary-color);
+  fill: var(--primary-color);
 }
 
 .active-fill {
-    fill: white;
+  fill: white;
 }
 
 .hide {
   display: none;
 }
 
+#darkMode {
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+}
+
+#lightMode {
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+}
+
+.dark-mode {
+  background-color: #202020;
+  color: #e1e1e6;
+}
