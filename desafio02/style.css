@@ -18,6 +18,7 @@ body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
   background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 main {
@@ -33,7 +34,6 @@ main {
 
 span {
   font-size: 12.6rem;
-  color: var(--text-color);
 }
 
 #buttons {
@@ -99,4 +99,5 @@ button {
 .dark-mode {
   background-color: #202020;
   color: #e1e1e6;
+  fill: #e1e1e6;
 }
